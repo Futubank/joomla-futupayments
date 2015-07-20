@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="2.5" type="plugin" group="vmpayment" method="upgrade">
+	<name>VMPAYMENT_STT_FUTUBANK</name>
+	<author>Futubank</author>
+	<creationDate>Jul 2015</creationDate>
+	<copyright>(C) 2015 Futubank.com. All rights reserved.</copyright>
+	<license>GNU General Public License v3</license>
+	<authorEmail>help@futubank.com</authorEmail>
+	<authorUrl>futubank.com</authorUrl>
+	<version>2.5.0</version>
+	<description>Futubank payments</description>
+	<files>
+		<filename plugin="sttfutubank">sttfutubank.php</filename>
+		<filename>futubank_core.php</filename>
+		<filename>index.html</filename>
+	</files>
+	<languages>
+		<language tag="en-GB">en-GB.plg_vmpayment_sttfutubank.ini</language>
+		<language tag="en-GB">en-GB.plg_vmpayment_sttfutubank.sys.ini</language>
+		<language tag="ru-RU">ru-RU.plg_vmpayment_sttfutubank.ini</language>
+		<language tag="ru-RU">ru-RU.plg_vmpayment_sttfutubank.sys.ini</language>
+	</languages>
+	<params addpath="/administrator/components/com_virtuemart/elements">
+		<param	name="payment_logos" type="vmfiles" label="VMPAYMENT_STT_FUTUBANK_LOGOS"
+			description="VMPAYMENT_STT_FUTUBANK_LOGOS_DESC"
+			directory="/images/stories/virtuemart/payment"
+			default="default" hide_default="1" hide_none="1"
+			stripext="0" exclude=".*\.(php|html|xml|wsdl)" />
+		<param name="login" type="text" size="20" label="VMPAYMENT_STT_FUTUBANK_LOGIN" description="VMPAYMENT_STT_FUTUBANK_LOGIN_DESCR" default="" />
+		<param name="pass2"  type="text" size="20" label="VMPAYMENT_STT_FUTUBANK_PASS2" description="VMPAYMENT_STT_FUTUBANK_PASS2_DESCR" default="" />
+		<param name="test" type="list" description="VMPAYMENT_STT_FUTUBANK_TEST_DESCR" label="VMPAYMENT_STT_FUTUBANK_TEST" default="1" >
+			<option value="1">COM_VIRTUEMART_YES</option>
+			<option value="0">COM_VIRTUEMART_NO</option>
+		</param>
+		<param name="send_pending" type="list" default="0" label="VMPAYMENT_STT_FUTUBANK_SENDPENDING_LABEL" description="VMPAYMENT_STT_FUTUBANK_SENDPENDING_DESC">
+			<option value="1">COM_VIRTUEMART_YES</option>
+			<option value="0">COM_VIRTUEMART_NO</option>
+		</param>
+		<param name="status_pending" type="vmorderstate" scope="com_virtuemart" default="P" label="VMPAYMENT_STT_FUTUBANK_STATUS_PENDING" description="VMPAYMENT_STT_FUTUBANK_STATUS_PENDING_EXPLAIN" />
+		<param name="status_success" type="vmorderstate" scope="com_virtuemart" default="C" label="VMPAYMENT_STT_FUTUBANK_STATUS_SUCCESS" description="VMPAYMENT_STT_FUTUBANK_STATUS_SUCCESS_EXPLAIN" />
+		<param name="status_canceled" type="vmorderstate" scope="com_virtuemart" default="X" label="VMPAYMENT_STT_FUTUBANK_STATUS_FAILED" description="VMPAYMENT_STT_FUTUBANK_STATUS_FAILED_EXPLAIN" />
+		<param name="cost_per_transaction" type="text"  label="VMPAYMENT_STT_FUTUBANK_COST_PER_TRANSACTION" description="VMPAYMENT_STT_FUTUBANK_COST_PER_TRANSACTION_EXPLAIN" />
+		<param name="cost_percent_total" type="text"  label="VMPAYMENT_STT_FUTUBANK_COST_PERCENT_TOTAL" description="VMPAYMENT_STT_FUTUBANK_COST_PERCENT_TOTAL_EXPLAIN" />
+		<param name="tax_id" type="vmtaxes" scope="com_virtuemart"  label="VMPAYMENT_STT_FUTUBANK_TAX" description="VMPAYMENT_STT_FUTUBANK_TAX_DESC" />
+	</params>
+</extension>
